@@ -27,30 +27,4 @@ docker run --name kib01 --net elastic -p 5601:5601 docker.elastic.co/kibana/kiba
 # ```
 # ==========================
 # http://localhost:5601/app/dev_tools#/console/shell
-```
-# add_data
-POST nvminh162/_doc
-{
-    "@timestamp": "2026-03-03",
-    "username": "nvminh162",
-    "github": "https://github.com/nvminh162"
-}
 
-# controller index
-GET _cat/indices
-
-# search data
-GET nvminh162/_search
-{
-    "query": {
-        "match_all": {}
-    },
-    "sort": [
-      {
-        "@timestamp": {
-          "order": "desc"
-        }
-      }
-    ]
-}
-```
